@@ -72,7 +72,7 @@ figcaption{
   font-style:italic;color:var(--soft);font-size:17px;line-height:1.4;
   padding:10px clamp(20px,9vw,160px) 0;max-width:70ch;
 }
-.bleed img{height:auto}
+.bleed img{height:clamp(260px,56vh,600px);object-fit:cover;object-position:center 38%}
 
 .gap-s{height:clamp(30px,4vw,44px)}
 .gap-m{height:clamp(48px,7vw,80px)}
@@ -93,11 +93,14 @@ figcaption{
   padding:12px 22px;border:0;cursor:pointer;text-decoration:none;
 }
 .btn:hover{background:#c8460b}
+.btn-light{background:#fff;color:var(--orange)}
+.btn-light:hover{background:#f1f0ec}
 
 .pays > div{margin-bottom:1.9em}
 .pays > div:last-child{margin-bottom:0}
 
-.two{display:grid;grid-template-columns:1fr 1fr;gap:clamp(12px,2vw,22px);padding:0 clamp(20px,9vw,160px)}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:clamp(12px,2vw,22px);
+  max-width:600px;margin-left:clamp(20px,9vw,160px);padding-right:20px}
 .two figcaption{padding-left:0;padding-right:0}
 .two video{aspect-ratio:9/16;object-fit:cover;background:#111}
 
@@ -119,6 +122,19 @@ figcaption{
 }
 .band .bm{font-size:clamp(30px,4.4vw,50px);font-weight:600;letter-spacing:-.02em;line-height:1.05}
 .band p{font-size:clamp(19px,2vw,23px);max-width:34ch;margin:14px 0 0}
+
+dialog{
+  border:0;padding:0;background:var(--paper);color:var(--text);
+  width:min(94vw,520px);max-height:92vh;
+}
+dialog::backdrop{background:rgba(20,20,19,.6)}
+.modal{position:relative;padding:clamp(24px,5vw,38px)}
+.modal h2{margin-bottom:.3em}
+.modal .sub{color:var(--soft);margin-bottom:26px}
+.xbtn{
+  position:absolute;top:8px;right:14px;background:none;border:0;cursor:pointer;
+  font-family:var(--serif);font-size:30px;line-height:1;color:var(--soft);padding:4px;
+}
 
 .wa{
   position:fixed;right:clamp(14px,3vw,28px);bottom:clamp(14px,3vw,28px);z-index:50;
@@ -168,7 +184,7 @@ figcaption{
   <p>Medal finisher hampir selalu punya bidang kosong di bagian belakang. Kami grafir bidang itu dengan nama peserta dan catatan waktu resminya, dikerjakan di lokasi acara pada hari itu juga.</p>
   <p>Layanan ini bisa kami bawa ke event Anda. Penyelenggara tidak mengeluarkan biaya, dan tidak ada pekerjaan tambahan untuk tim Anda.</p>
   <div class="gap-s"></div>
-  <a class="btn" href="#ajukan">Ajukan event Anda</a>
+  <button class="btn" type="button" data-open>Ajukan event Anda</button>
 </div>
 
 <div class="gap-l"></div>
@@ -287,16 +303,22 @@ figcaption{
 <section class="band">
   <div class="bm">Tangka Studio</div>
   <p>Grafir medal finisher, dikerjakan di lokasi acara Anda.</p>
+  <div class="gap-s"></div>
+  <button class="btn btn-light" type="button" data-open>Ajukan event Anda</button>
 </section>
 
-<!-- ===== form ===== -->
-<div class="col-wide" id="ajukan">
-  <h2>Ajukan event Anda</h2>
-  <p>Isi keterangan di bawah, pesannya langsung masuk ke WhatsApp kami. Kami balas dengan perkiraan biaya dan kebutuhan ruang di lokasi.</p>
-</div>
-<div class="gap-s"></div>
-<div class="form">
-  <div class="f">
+<footer class="foot">
+  <b style="color:var(--orange);font-weight:600">Tangka Studio</b> — lini laser engraving Loyalin.<br>
+  Berbasis di Pekanbaru, mengerjakan acara di seluruh Indonesia.<br>
+  <a href="https://wa.me/6281276693152">WhatsApp</a> &nbsp;&middot;&nbsp; <a href="https://www.instagram.com/tangkastudio/">@tangkastudio</a>
+</footer>
+
+<dialog id="modal">
+  <div class="modal">
+    <button class="xbtn" id="xClose" type="button" aria-label="Tutup">&times;</button>
+    <h2>Ajukan event Anda</h2>
+    <p class="sub">Pesannya langsung masuk ke WhatsApp kami.</p>
+<div class="f">
     <label for="f-event">Nama event</label>
     <input id="f-event" type="text" autocomplete="off">
   </div>
@@ -328,17 +350,10 @@ figcaption{
     <label for="f-wa">Nomor WhatsApp Anda</label>
     <input id="f-wa" type="tel" autocomplete="tel">
   </div>
-  <button class="btn" id="send" type="button">Kirim lewat WhatsApp</button>
-  <p class="err" id="err"></p>
-</div>
-
-<div class="gap-m"></div>
-
-<footer class="foot">
-  <b style="color:var(--orange);font-weight:600">Tangka Studio</b> — lini laser engraving Loyalin.<br>
-  Berbasis di Pekanbaru, mengerjakan acara di seluruh Indonesia.<br>
-  <a href="https://wa.me/6281276693152">WhatsApp</a> &nbsp;&middot;&nbsp; <a href="https://www.instagram.com/tangkastudio/">@tangkastudio</a>
-</footer>
+    <button class="btn" id="send" type="button">Kirim lewat WhatsApp</button>
+    <p class="err" id="err"></p>
+  </div>
+</dialog>
 
 <a class="wa" id="waFab" href="#" target="_blank" rel="noopener" aria-label="Hubungi Tangka Studio lewat WhatsApp">
   <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
@@ -348,6 +363,13 @@ figcaption{
 <script>
 /* ganti nomor WA tujuan di sini */
 var WA = '6281276693152';
+
+var dlg = document.getElementById('modal');
+Array.prototype.forEach.call(document.querySelectorAll('[data-open]'), function(b){
+  b.addEventListener('click', function(){ dlg.showModal(); });
+});
+document.getElementById('xClose').addEventListener('click', function(){ dlg.close(); });
+dlg.addEventListener('click', function(e){ if (e.target === dlg) dlg.close(); });
 
 var fab = document.getElementById('waFab');
 fab.href = 'https://wa.me/' + WA + '?text=' + encodeURIComponent(
