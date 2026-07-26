@@ -4,10 +4,9 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Grafir Medal Finisher untuk Event Lari — Tangka Studio</title>
-<meta name="description" content="Jasa grafir nama dan catatan waktu finisher di medal peserta, dikerjakan di lokasi acara. Melayani event lari di seluruh Indonesia. Penyelenggara tidak mengeluarkan biaya.">
+<meta name="description" content="Kami grafir nama dan catatan waktu setiap finisher di medalnya, langsung di lokasi acara. Penyelenggara tidak mengeluarkan biaya. Melayani event lari di seluruh Indonesia.">
 <link rel="canonical" href="https://vapekanbaru-png.github.io/tangka/">
-<meta name="robots" content="noindex,nofollow"><!-- PREVIEW: hapus baris ini & pakai baris di bawah waktu naik ke domain asli -->
-<!-- <meta name="robots" content="index,follow,max-image-preview:large"> -->
+<meta name="robots" content="noindex,nofollow"><!-- PREVIEW -->
 <meta name="theme-color" content="#E8540F">
 
 <meta property="og:type" content="website">
@@ -15,353 +14,329 @@
 <meta property="og:site_name" content="Tangka Studio">
 <meta property="og:url" content="https://vapekanbaru-png.github.io/tangka/">
 <meta property="og:title" content="Grafir Medal Finisher untuk Event Lari">
-<meta property="og:description" content="Nama dan catatan waktu finisher digrafir di medal peserta, di lokasi acara. Penyelenggara tidak mengeluarkan biaya.">
+<meta property="og:description" content="Nama dan catatan waktu setiap finisher digrafir di medalnya, di lokasi acara. Penyelenggara tidak mengeluarkan biaya.">
 <meta property="og:image" content="https://vapekanbaru-png.github.io/tangka/booth.jpg">
 <meta property="og:image:width" content="1600">
 <meta property="og:image:height" content="1200">
-<meta property="og:image:alt" content="Booth grafir Tangka Studio dikerumuni peserta di area finisher">
 <meta name="twitter:card" content="summary_large_image">
 
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
-<link rel="apple-touch-icon" href="favicon.svg">
-
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,300..600;1,6..72,300..500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Newsreader:opsz,wght@6..72,500;6..72,600&display=swap" rel="stylesheet">
 <style>
 :root{
-  --paper:#fff;
-  --text:#141413;
-  --soft:#5c5b57;
-  --line:#d6d5d0;
+  --ink:#161513;
+  --body:#4a4844;
+  --line:#e2e0da;
+  --wash:#faf9f6;
   --orange:#E8540F;
+  --orange-dk:#B93E08;
   --serif:'Newsreader',Georgia,serif;
+  --sans:'Inter',system-ui,sans-serif;
+  --pad:clamp(20px,5vw,56px);
 }
 *{box-sizing:border-box;margin:0;padding:0}
-html{-webkit-text-size-adjust:100%}
-body{
-  background:var(--paper);color:var(--text);
-  font-family:var(--serif);font-weight:400;
-  font-size:19px;line-height:1.55;
-  font-optical-sizing:auto;
-}
-img,video{display:block;width:100%}
+html{-webkit-text-size-adjust:100%;overflow-x:hidden}
+body{background:#fff;color:var(--body);font-family:var(--sans);font-size:16.5px;line-height:1.6;-webkit-font-smoothing:antialiased}
+img,video{display:block;max-width:100%}
+.wrap{max-width:1120px;margin:0 auto;padding:0 var(--pad)}
 
-/* satu kolom teks, digeser ke kiri — bukan di tengah */
-.col{max-width:60ch;margin-left:clamp(20px,9vw,160px);padding-right:20px}
-.col-wide{max-width:76ch;margin-left:clamp(20px,9vw,160px);padding-right:20px}
+h1,h2,h3{font-family:var(--serif);color:var(--ink);font-weight:600;line-height:1.1;letter-spacing:-.015em}
+h1{font-size:clamp(34px,4.6vw,54px)}
+h2{font-size:clamp(26px,3.2vw,38px)}
+h3{font-size:20px}
+a{color:var(--orange)}
 
-h1,h2{font-weight:500;line-height:1.15;letter-spacing:-.01em}
-h1{font-size:clamp(27px,3.4vw,38px);max-width:26ch}
-h2{font-size:clamp(23px,2.6vw,29px);margin-bottom:.6em}
-h3{font-size:20px;font-weight:500;margin-bottom:.25em}
-p{margin-bottom:1em}
-p:last-child{margin-bottom:0}
-a{color:var(--orange);text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:3px}
-:focus-visible{outline:2px solid var(--text);outline-offset:3px}
+.btn{display:inline-block;font-family:var(--sans);font-size:15px;font-weight:600;
+  padding:14px 24px;border:0;cursor:pointer;text-decoration:none;line-height:1.2}
+.btn-o{background:var(--orange);color:#fff}
+.btn-o:hover{background:var(--orange-dk)}
+.btn-g{background:#fff;color:var(--ink);box-shadow:inset 0 0 0 1.5px var(--line)}
+.btn-g:hover{box-shadow:inset 0 0 0 1.5px var(--ink)}
+.btn-w{background:#fff;color:var(--orange)}
+:focus-visible{outline:2px solid var(--orange);outline-offset:3px}
 
-.head{padding:30px clamp(20px,9vw,160px) 26px}
-.mark{
-  display:block;color:var(--orange);text-decoration:none;
-  font-size:clamp(27px,3.1vw,35px);font-weight:600;letter-spacing:-.015em;line-height:1.1;
-}
-.head p{color:var(--soft);font-size:18px;margin:2px 0 0}
+/* header */
+.hd{border-bottom:1px solid var(--line)}
+.hd-in{display:flex;align-items:center;justify-content:space-between;gap:16px;height:72px}
+.wm{font-family:var(--serif);font-size:25px;font-weight:600;color:var(--orange);text-decoration:none;letter-spacing:-.02em}
+.hd .btn{padding:11px 18px}
 
-figure{margin:0}
-figcaption{
-  font-style:italic;color:var(--soft);font-size:17px;line-height:1.4;
-  padding:10px clamp(20px,9vw,160px) 0;max-width:70ch;
-}
-.bleed img{height:clamp(260px,56vh,600px);object-fit:cover;object-position:center 38%}
+/* hero */
+.hero{display:grid;grid-template-columns:1.08fr .92fr;gap:clamp(28px,4vw,56px);
+  align-items:center;padding:clamp(44px,6vw,76px) 0 clamp(36px,5vw,56px)}
+.hero h1{margin-bottom:20px}
+.hero h1 em{font-style:normal;color:var(--orange)}
+.hero .sub{font-size:clamp(17px,1.7vw,19px);max-width:44ch}
+.cta{display:flex;flex-wrap:wrap;gap:11px;margin-top:28px}
+.hero figure{margin:0}
+.hero img{width:100%;aspect-ratio:4/4.4;object-fit:cover;object-position:center 36%}
+.cap{font-family:var(--serif);font-size:15px;color:#8a8781;margin-top:9px}
 
-.gap-s{height:clamp(30px,4vw,44px)}
-.gap-m{height:clamp(48px,7vw,80px)}
-.gap-l{height:clamp(64px,10vw,120px)}
+/* klaim */
+.claims{border-top:1px solid var(--line);border-bottom:1px solid var(--line);
+  display:grid;grid-template-columns:repeat(3,1fr)}
+.claim{padding:26px 26px 26px 0}
+.claim + .claim{padding-left:26px;border-left:1px solid var(--line)}
+.claim b{display:block;font-family:var(--serif);font-size:22px;font-weight:600;color:var(--ink);margin-bottom:5px}
+.claim b span{color:var(--orange)}
+.claim p{font-size:15px}
 
-.n{font-size:1.45em;font-weight:500;line-height:1}
+section{padding:clamp(52px,7vw,88px) 0}
+.lead{font-size:clamp(17px,1.7vw,19px);max-width:58ch;margin-top:14px}
 
-/* blank yang harus diisi sebelum publish */
-.blank{
-  display:inline-block;min-width:2.6em;
-  border-bottom:2px solid var(--orange);
-  text-align:center;font-weight:600;
-}
+/* model bayar */
+.models{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line);
+  border:1px solid var(--line);margin-top:38px}
+.mod{background:#fff;padding:30px 26px}
+.mod.hi{background:var(--wash);box-shadow:inset 4px 0 0 var(--orange)}
+.mod h3{margin-bottom:10px}
+.mod p{font-size:15.5px}
+.mod .tag{font-size:12px;font-weight:600;letter-spacing:.04em;color:var(--orange);margin-bottom:14px}
 
-.btn{
-  display:inline-block;background:var(--orange);color:#fff;
-  font-family:var(--serif);font-size:19px;font-weight:500;
-  padding:12px 22px;border:0;cursor:pointer;text-decoration:none;
-}
-.btn:hover{background:#c8460b}
-.btn-light{background:#fff;color:var(--orange)}
-.btn-light:hover{background:#f1f0ec}
+/* bukti */
+.proof{background:var(--wash)}
+.clips{display:grid;grid-template-columns:repeat(2,minmax(0,250px));gap:16px;margin-top:32px}
+.clips video{width:100%;aspect-ratio:9/16;object-fit:cover;background:#111}
 
-.pays > div{margin-bottom:1.9em}
-.pays > div:last-child{margin-bottom:0}
+/* faq */
+/* instagram */
+.ig{display:flex;flex-wrap:wrap;align-items:center;gap:18px;margin-top:30px;
+  border:1.5px solid var(--line);padding:24px 26px}
+.ig-i{width:44px;height:44px;flex:none;display:grid;place-items:center;background:var(--orange)}
+.ig-i svg{width:24px;height:24px;fill:#fff}
+.ig-t{flex:1 1 240px}
+.ig-t b{display:block;font-family:var(--serif);font-size:20px;font-weight:600;color:var(--ink)}
+.ig-t span{font-size:15px}
+#ig-feed:not(:empty){margin-top:26px}
 
-.two{display:grid;grid-template-columns:1fr 1fr;gap:clamp(12px,2vw,22px);
-  max-width:600px;margin-left:clamp(20px,9vw,160px);padding-right:20px}
-.two figcaption{padding-left:0;padding-right:0}
-.two video{aspect-ratio:9/16;object-fit:cover;background:#111}
+.faq{margin-top:34px;border-top:1px solid var(--line)}
+.faq details{border-bottom:1px solid var(--line)}
+.faq summary{list-style:none;cursor:pointer;padding:18px 0;font-family:var(--serif);
+  font-size:19px;font-weight:600;color:var(--ink);display:flex;justify-content:space-between;gap:16px}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:"+";color:var(--orange);font-size:22px;line-height:1}
+.faq details[open] summary::after{content:"–"}
+.faq p{padding:0 0 20px;max-width:66ch;font-size:15.5px}
 
+/* pita */
+.band{background:var(--orange);color:#fff}
+.band .wrap{padding-top:clamp(44px,6vw,72px);padding-bottom:clamp(44px,6vw,72px)}
+.band h2{color:#fff;font-size:clamp(27px,3.4vw,42px);max-width:20ch}
+.band p{margin:14px 0 26px;max-width:44ch;font-size:17px;color:#fff;opacity:.92}
 
-.form{max-width:34em;margin-left:clamp(20px,9vw,160px);padding-right:20px}
-.f{margin-bottom:22px}
-.f label{display:block;font-size:17px;color:var(--soft);margin-bottom:2px}
-.f input,.f select{
-  width:100%;font-family:var(--serif);font-size:19px;color:var(--text);
-  background:transparent;border:0;border-bottom:1.5px solid var(--line);
-  padding:5px 0;border-radius:0;
-}
-.f input:focus,.f select:focus{outline:none;border-bottom-color:var(--orange)}
-.err{color:#a3231b;font-style:italic;margin-top:12px;min-height:1.4em}
+/* footer */
+.ft{border-top:1px solid var(--line);padding:34px 0;font-size:14.5px;color:#8a8781}
+.ft b{color:var(--orange);font-weight:600}
 
-.band{
-  background:var(--orange);color:#fff;
-  padding:clamp(46px,7vw,78px) clamp(20px,9vw,160px);
-}
-.band .bm{font-size:clamp(30px,4.4vw,50px);font-weight:600;letter-spacing:-.02em;line-height:1.05}
-.band p{font-size:clamp(19px,2vw,23px);max-width:34ch;margin:14px 0 0}
+/* popup */
+dialog{border:0;padding:0;background:#fff;width:min(94vw,470px);
+  max-height:88svh;max-height:88vh;overflow-y:auto;overscroll-behavior:contain}
+dialog::backdrop{background:rgba(22,21,19,.6)}
+.modal{position:relative;padding:clamp(26px,4vw,36px)}
+.modal h2{font-size:27px;margin-bottom:6px}
+.modal .sub{font-size:15px;margin-bottom:24px}
+.x{position:absolute;top:6px;right:8px;background:0;border:0;cursor:pointer;
+  font-size:26px;color:#a5a29c;line-height:1;width:44px;height:44px}
+.f{margin-bottom:15px}
+.f label{display:block;font-size:13px;font-weight:500;color:var(--ink);margin-bottom:5px}
+.f input,.f select{width:100%;font-family:var(--sans);font-size:16px;color:var(--ink);
+  background:#fff;border:1.5px solid var(--line);padding:11px 12px;border-radius:0}
+.f input:focus,.f select:focus{outline:0;border-color:var(--orange)}
+.err{color:#b3261e;font-size:14px;margin-top:11px;min-height:1.3em}
 
-dialog{
-  border:0;padding:0;background:var(--paper);color:var(--text);
-  width:min(94vw,520px);max-height:92vh;
-}
-dialog::backdrop{background:rgba(20,20,19,.6)}
-.modal{position:relative;padding:clamp(24px,5vw,38px)}
-.modal h2{margin-bottom:.3em}
-.modal .sub{color:var(--soft);margin-bottom:26px}
-.xbtn{
-  position:absolute;top:8px;right:14px;background:none;border:0;cursor:pointer;
-  font-family:var(--serif);font-size:30px;line-height:1;color:var(--soft);padding:4px;
-}
-
-.wa{
-  position:fixed;right:clamp(14px,3vw,28px);bottom:clamp(14px,3vw,28px);z-index:50;
-  display:none;align-items:center;gap:9px;
-  background:var(--orange);color:#fff;text-decoration:none;
-  font-family:var(--serif);font-size:18px;font-weight:500;
-  padding:12px 18px;box-shadow:0 6px 22px rgba(0,0,0,.2);
-}
+/* wa */
+.wa{position:fixed;right:clamp(14px,3vw,26px);bottom:clamp(14px,3vw,26px);z-index:50;
+  display:none;align-items:center;gap:9px;background:var(--orange);color:#fff;text-decoration:none;
+  font-size:15px;font-weight:600;padding:13px 19px;box-shadow:0 8px 24px rgba(0,0,0,.22)}
 .wa.on{display:flex}
-.wa:hover{background:#c8460b}
-.wa svg{width:20px;height:20px;fill:#fff;flex:none}
-@media(max-width:520px){
-  .wa{padding:15px;border-radius:50%}
+.wa:hover{background:var(--orange-dk)}
+.wa svg{width:19px;height:19px;fill:#fff;flex:none}
+
+@media(max-width:860px){
+  .hero{grid-template-columns:1fr;padding-top:34px}
+  .hero figure{order:-1}
+  .hero img{aspect-ratio:4/3}
+  .claims,.models{grid-template-columns:1fr}
+  .claim{padding:22px 0}
+  .claim + .claim{padding-left:0;border-left:0;border-top:1px solid var(--line)}
+  .mod.hi{box-shadow:inset 0 4px 0 var(--orange)}
+  .hd .btn{display:none}
+  .clips{grid-template-columns:1fr 1fr}
+}
+@media(max-width:560px){
+  .clips{grid-template-columns:minmax(0,290px)}
   .wa b{display:none}
-}
-
-.foot{
-  padding:clamp(40px,6vw,64px) clamp(20px,9vw,160px);
-  border-top:1px solid var(--line);color:var(--soft);font-size:17px;
-}
-
-@media(max-width:760px){
-  body{font-size:18px}
-  .two{grid-template-columns:1fr}
+  .wa{padding:15px;border-radius:50%}
 }
 </style>
 </head>
 <body>
 
-<header class="head">
-  <a class="mark" href="#">Tangka Studio</a>
-  <p>Grafir medal finisher untuk event lari di seluruh Indonesia</p>
+<header class="hd">
+  <div class="wrap hd-in">
+    <a class="wm" href="#">Tangka Studio</a>
+    <button class="btn btn-o" type="button" data-open>Ajukan event</button>
+  </div>
 </header>
 
-<!-- ===== foto pembuka, tanpa tulisan di atasnya ===== -->
-<figure class="bleed">
-  <img src="booth.jpg" width="1600" height="1200"
-       alt="Booth grafir Tangka Studio di area finisher sebuah event lari, dikerumuni peserta yang menunggu medalnya diukir">
-  <figcaption>Booth kami di area finisher, Pekanbaru, Juli 2026.</figcaption>
-</figure>
-
-<div class="gap-m"></div>
-
-<div class="col">
-  <h1>Peserta mengantre untuk mengukir nama dan catatan waktunya di medal finisher.</h1>
-  <div class="gap-s"></div>
-  <p>Medal finisher hampir selalu punya bidang kosong di bagian belakang. Kami grafir bidang itu dengan nama peserta dan catatan waktu resminya, dikerjakan di lokasi acara pada hari itu juga.</p>
-  <p>Layanan ini bisa kami bawa ke event Anda. Penyelenggara tidak mengeluarkan biaya, dan tidak ada pekerjaan tambahan untuk tim Anda.</p>
-  <div class="gap-s"></div>
-  <button class="btn" type="button" data-open>Ajukan event Anda</button>
-</div>
-
-<div class="gap-l"></div>
-
-<!-- ===== angka, ditulis sebagai kalimat ===== -->
-<div class="col-wide">
-  <h2>Angka dari event terakhir</h2>
-  <!-- WAJIB DIISI sebelum publish. Ganti isi setiap <span class="blank"> -->
-  <p>Kami mengukir <span class="blank n">&nbsp;</span> medal dalam <span class="blank n">&nbsp;</span> jam menggunakan <span class="blank n">&nbsp;</span> unit laser. Satu medal selesai rata-rata <span class="blank n">&nbsp;</span> detik. Dari total peserta yang finis, <span class="blank n">&nbsp;</span> persen memilih mengukir medalnya.</p>
-</div>
-
-<div class="gap-m"></div>
-
-<!-- ===== video ===== -->
-<div class="two">
-  <figure>
-    <video src="clip-engrave.mp4" poster="clip-engrave.jpg" controls playsinline preload="metadata"></video>
-    <figcaption>Proses grafir berjalan.</figcaption>
-  </figure>
-  <figure>
-    <video src="clip-proses.mp4" poster="clip-proses.jpg" controls playsinline preload="metadata"></video>
-    <figcaption>Medal peserta di meja kerja.</figcaption>
-  </figure>
-</div>
-
-<!--
-  ===== SLOT FOTO HASIL =====
-  Begitu ada foto close-up medal yang sudah terukir, hapus komentar ini
-  dan taruh blok di bawah tepat SETELAH header (jadi foto pembuka).
-  Permukaan gelap rata, cahaya dari samping.
-
-  <figure class="bleed">
-    <img src="hasil.jpg" alt="Medal finisher yang sudah terukir nama dan catatan waktu peserta">
-    <figcaption>Hasil grafir pada medal peserta.</figcaption>
-  </figure>
--->
-
-<div class="gap-l"></div>
-
-<!-- ===== cara kerja ===== -->
-<div class="col-wide">
-  <h2>Cara kerjanya</h2>
-  <p>Peserta mendaftar sendiri saat pengambilan racepack, menyerahkan medalnya di booth kami setelah finis, lalu mengambilnya kembali sudah terukir.</p>
-  <p>Dari penyelenggara kami hanya perlu satu meja di area finisher dan flyer yang masuk racepack. Selebihnya tidak ada.</p>
-</div>
-
-<div class="gap-l"></div>
-
-<!-- ===== jangkauan ===== -->
-<div class="col-wide">
-  <h2>Acara di luar Riau</h2>
-  <p>Peralatan kami portabel dan berangkat bersama tim. Kami mengerjakan acara di kota mana pun di Indonesia.</p>
-  <p>Di lokasi kami hanya perlu area beratap, meja, dan listrik <span class="blank n">&nbsp;</span> watt per unit laser. Selebihnya kami bawa sendiri.</p>
-  <p>Biaya perjalanan dan akomodasi tim dihitung terpisah menurut kota acara, dan umumnya bisa dimasukkan ke dalam paket sponsor. Konfirmasi kami perlukan paling lambat <span class="blank n">&nbsp;</span> minggu sebelum hari acara.</p>
-</div>
-
-<div class="gap-l"></div>
-
-<!-- ===== siapa yang bayar ===== -->
-<div class="col-wide">
-  <h2>Siapa yang membayar</h2>
-  <div class="pays">
-    <div>
-      <h3>Peserta</h3>
-      <p>Hanya peserta yang mau saja yang membayar, langsung ke kami. Ini cara paling ringan untuk mulai: penyelenggara tidak mengeluarkan biaya dan tidak ikut mengurus operasional.</p>
+<div class="wrap hero">
+  <div>
+    <h1>Satu momen baru di garis finis, <em>tanpa biaya</em> dari penyelenggara.</h1>
+    <p class="sub">Kami grafir nama dan catatan waktu setiap finisher di medalnya, langsung di lokasi acara. Yang membayar peserta atau sponsor — bukan Anda.</p>
+    <div class="cta">
+      <button class="btn btn-o" type="button" data-open>Ajukan event Anda</button>
+      <a class="btn btn-g" href="#model">Lihat model kerjasama</a>
     </div>
-    <div>
-      <h3>Sponsor</h3>
-      <p>Satu brand membiayai seluruh peserta, dan namanya ikut terukir di medal. Bedanya dengan spanduk atau booth: ukiran itu ikut pulang bersama pesertanya dan bertahan bertahun-tahun. Untuk penyelenggara, ini satu slot aktivasi baru yang bisa dijual, bukan pengeluaran.</p>
+  </div>
+  <figure>
+    <img src="booth.jpg" width="1600" height="1200"
+         alt="Peserta mengantre di booth grafir Tangka Studio di area finisher">
+    <p class="cap">Booth kami di area finisher, Pekanbaru, Juli 2026.</p>
+  </figure>
+</div>
+
+<div class="wrap">
+  <div class="claims">
+    <div class="claim">
+      <b><span>Rp0</span> untuk penyelenggara</b>
+      <p>Peserta atau sponsor yang membayar. Anda tidak menambah pos anggaran.</p>
     </div>
-    <div>
-      <h3>Penyelenggara, borongan</h3>
-      <p>Anda membeli sejumlah kuota dan menjadikannya benefit kategori tertentu — misalnya khusus finisher half marathon. Harga per medal menurun mengikuti jumlah.</p>
+    <div class="claim">
+      <b>Dikerjakan di <span>lokasi</span></b>
+      <p>Medal selesai digrafir hari itu juga, bukan dikirim balik berminggu-minggu.</p>
+    </div>
+    <div class="claim">
+      <b>Seluruh <span>Indonesia</span></b>
+      <p>Peralatan portabel dan berangkat bersama tim kami.</p>
     </div>
   </div>
 </div>
 
-<div class="gap-l"></div>
+<section id="model">
+  <div class="wrap">
+    <h2>Tiga cara membiayainya</h2>
+    <p class="lead">Pilih yang paling cocok dengan struktur acara Anda. Dua yang pertama tidak menyentuh anggaran penyelenggara sama sekali.</p>
 
-<!-- ===== promosi ===== -->
-<div class="col-wide">
-  <h2>Promosinya kami urus sendiri</h2>
-</div>
-<div class="gap-s"></div>
-<div class="col-wide">
-  <p>Desain flyer dan materi media sosial kami produksi sendiri, menyesuaikan identitas visual acara Anda. Iklan berbayar ke peserta juga kami jalankan dengan anggaran kami.</p>
-  <p>Yang kami perlukan dari penyelenggara hanya izin pemakaian logo acara.</p>
-</div>
-
-<div class="gap-l"></div>
-
-<div class="col-wide">
-  <h2>Pertanyaan yang sering masuk</h2>
-  <div class="pays">
-    <div>
-      <h3>Bisa ke kota mana saja?</h3>
-      <p>Seluruh Indonesia. Peralatan kami portabel dan berangkat bersama tim.</p>
-    </div>
-    <div>
-      <h3>Siapa yang membayar?</h3>
-      <p>Peserta, sponsor, atau penyelenggara secara borongan. Pada dua model pertama penyelenggara tidak mengeluarkan biaya sama sekali.</p>
-    </div>
-    <div>
-      <h3>Apa yang perlu disiapkan penyelenggara?</h3>
-      <p>Satu meja di area finisher, flyer yang masuk racepack, dan izin pemakaian logo acara.</p>
-    </div>
-    <div>
-      <h3>Medal jenis apa yang bisa digrafir?</h3>
-      <p>Medal logam seperti zinc alloy, kuningan, dan besi berlapis. Kami tes dulu pada sampel medal sebelum hari acara.</p>
+    <div class="models">
+      <div class="mod">
+        <p class="tag">PALING RINGAN</p>
+        <h3>Peserta membayar</h3>
+        <p>Hanya peserta yang mau yang membayar, langsung ke kami. Penyelenggara tidak mengeluarkan biaya dan tidak ikut mengurus operasional.</p>
+      </div>
+      <div class="mod hi">
+        <p class="tag">NILAI TERBESAR</p>
+        <h3>Sponsor membayar</h3>
+        <p>Satu brand membiayai seluruh finisher, dan namanya ikut terukir di medal. Bedanya dengan spanduk: ukiran itu pulang bersama pesertanya dan bertahan bertahun-tahun. Bagi Anda ini slot aktivasi baru yang bisa dijual.</p>
+      </div>
+      <div class="mod">
+        <p class="tag">VOLUME</p>
+        <h3>Penyelenggara borongan</h3>
+        <p>Anda beli sejumlah kuota dan jadikan benefit kategori tertentu, misalnya khusus finisher half marathon. Harga per medal turun mengikuti jumlah.</p>
+      </div>
     </div>
   </div>
-</div>
-
-<div class="gap-l"></div>
-
-<section class="band">
-  <div class="bm">Tangka Studio</div>
-  <p>Grafir medal finisher, dikerjakan di lokasi acara Anda.</p>
-  <div class="gap-s"></div>
-  <button class="btn btn-light" type="button" data-open>Ajukan event Anda</button>
 </section>
 
-<footer class="foot">
-  <b style="color:var(--orange);font-weight:600">Tangka Studio</b> — lini laser engraving Loyalin.<br>
-  Berbasis di Pekanbaru, mengerjakan acara di seluruh Indonesia.<br>
-  <a href="https://wa.me/6281276693152">WhatsApp</a> &nbsp;&middot;&nbsp; <a href="https://www.instagram.com/tangkastudio/">@tangkastudio</a>
+<section class="proof">
+  <div class="wrap">
+    <h2>Seperti apa di lapangan</h2>
+    <p class="lead">Kami datang dengan mesin, operator, dan sistem antreannya sendiri. Yang kami perlukan dari Anda hanya satu meja di area finisher dan flyer yang masuk racepack.</p>
+    <div class="clips">
+      <video src="clip-engrave.mp4" poster="clip-engrave.jpg" controls playsinline preload="metadata"></video>
+      <video src="clip-proses.mp4" poster="clip-proses.jpg" controls playsinline preload="metadata"></video>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <h2>Pekerjaan terbaru</h2>
+    <p class="lead">Kami unggah hasil grafir terbaru di Instagram, termasuk pekerjaan di luar medal lari.</p>
+
+    <!-- ====== TEMPEL KODE WIDGET IG DI SINI ======
+         Daftar gratis di lightwidget.com atau behold.so, hubungkan akun
+         @tangkastudio, lalu tempel potongan kodenya di dalam div bawah ini.
+         Kalau dibiarkan kosong, yang tampil hanya kartu tautan di bawahnya. -->
+    <div id="ig-feed"></div>
+
+    <div class="ig">
+      <span class="ig-i" aria-hidden="true">
+        <svg viewBox="0 0 24 24"><path d="M12 2.16c3.2 0 3.58.01 4.85.07 1.17.05 1.8.25 2.23.41.56.22.96.48 1.38.9.42.42.68.82.9 1.38.16.42.36 1.06.41 2.23.06 1.27.07 1.65.07 4.85s-.01 3.58-.07 4.85c-.05 1.17-.25 1.8-.41 2.23-.22.56-.48.96-.9 1.38-.42.42-.82.68-1.38.9-.42.16-1.06.36-2.23.41-1.27.06-1.65.07-4.85.07s-3.58-.01-4.85-.07c-1.17-.05-1.8-.25-2.23-.41-.56-.22-.96-.48-1.38-.9-.42-.42-.68-.82-.9-1.38-.16-.42-.36-1.06-.41-2.23C2.17 15.58 2.16 15.2 2.16 12s.01-3.58.07-4.85c.05-1.17.25-1.8.41-2.23.22-.56.48-.96.9-1.38.42-.42.82-.68 1.38-.9.42-.16 1.06-.36 2.23-.41C8.42 2.17 8.8 2.16 12 2.16M12 0C8.74 0 8.33.01 7.05.07 5.78.13 4.9.33 4.14.63c-.79.3-1.46.72-2.12 1.39C1.35 2.68.93 3.35.63 4.14.33 4.9.13 5.78.07 7.05.01 8.33 0 8.74 0 12s.01 3.67.07 4.95c.06 1.27.26 2.15.56 2.91.3.79.72 1.46 1.39 2.12.66.67 1.33 1.09 2.12 1.39.76.3 1.64.5 2.91.56C8.33 23.99 8.74 24 12 24s3.67-.01 4.95-.07c1.27-.06 2.15-.26 2.91-.56.79-.3 1.46-.72 2.12-1.39.67-.66 1.09-1.33 1.39-2.12.3-.76.5-1.64.56-2.91.06-1.28.07-1.69.07-4.95s-.01-3.67-.07-4.95c-.06-1.27-.26-2.15-.56-2.91-.3-.79-.72-1.46-1.39-2.12C21.32 1.35 20.65.93 19.86.63c-.76-.3-1.64-.5-2.91-.56C15.67.01 15.26 0 12 0zm0 5.84a6.16 6.16 0 100 12.32A6.16 6.16 0 0012 5.84zm0 10.16a4 4 0 110-8 4 4 0 010 8zm7.85-10.4a1.44 1.44 0 11-2.88 0 1.44 1.44 0 012.88 0z"/></svg>
+      </span>
+      <span class="ig-t">
+        <b>@tangkastudio</b>
+        <span>Hasil grafir terbaru, diperbarui rutin.</span>
+      </span>
+      <a class="btn btn-o" href="https://www.instagram.com/tangkastudio/" target="_blank" rel="noopener">Buka Instagram</a>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <h2>Pertanyaan yang sering masuk</h2>
+    <div class="faq">
+      <details open>
+        <summary>Berapa biaya untuk penyelenggara?</summary>
+        <p>Nol, pada model peserta membayar dan sponsor membayar. Biaya perjalanan dan akomodasi tim kami tanggung terpisah dari kesepakatan dengan Anda.</p>
+      </details>
+      <details>
+        <summary>Bisa ke kota mana saja?</summary>
+        <p>Seluruh Indonesia. Peralatan kami portabel dan berangkat bersama tim. Konfirmasi kami perlukan beberapa minggu sebelum hari acara agar template dan jig medal Anda siap.</p>
+      </details>
+      <details>
+        <summary>Apa yang perlu disiapkan penyelenggara?</summary>
+        <p>Satu meja di area finisher, area beratap, aliran listrik, flyer yang masuk racepack, dan izin pemakaian logo acara.</p>
+      </details>
+      <details>
+        <summary>Medal jenis apa yang bisa digrafir?</summary>
+        <p>Medal logam seperti zinc alloy, kuningan, dan besi berlapis. Kami tes dulu pada sampel medal Anda sebelum hari acara.</p>
+      </details>
+    </div>
+  </div>
+</section>
+
+<section class="band">
+  <div class="wrap">
+    <h2>Ceritakan acara Anda.</h2>
+    <p>Kami balas dengan perkiraan biaya, kebutuhan ruang di lokasi, dan skema sponsor yang bisa Anda jual.</p>
+    <button class="btn btn-w" type="button" data-open>Ajukan event Anda</button>
+  </div>
+</section>
+
+<footer class="ft">
+  <div class="wrap">
+    <b>Tangka Studio</b> — lini laser engraving Loyalin. Berbasis di Pekanbaru, mengerjakan acara di seluruh Indonesia.<br>
+    <a href="https://wa.me/6281276693152">WhatsApp</a> &nbsp;&middot;&nbsp; <a href="https://www.instagram.com/tangkastudio/">@tangkastudio</a>
+  </div>
 </footer>
 
 <dialog id="modal">
   <div class="modal">
-    <button class="xbtn" id="xClose" type="button" aria-label="Tutup">&times;</button>
+    <button class="x" id="xClose" type="button" aria-label="Tutup">&times;</button>
     <h2>Ajukan event Anda</h2>
     <p class="sub">Pesannya langsung masuk ke WhatsApp kami.</p>
-<div class="f">
-    <label for="f-event">Nama event</label>
-    <input id="f-event" type="text" autocomplete="off">
-  </div>
-  <div class="f">
-    <label for="f-city">Kota acara</label>
-    <input id="f-city" type="text" autocomplete="off">
-  </div>
-  <div class="f">
-    <label for="f-date">Tanggal acara</label>
-    <input id="f-date" type="date">
-  </div>
-  <div class="f">
-    <label for="f-qty">Perkiraan jumlah peserta</label>
-    <input id="f-qty" type="number" min="1" autocomplete="off">
-  </div>
-  <div class="f">
-    <label for="f-sponsor">Sudah ada sponsor?</label>
-    <select id="f-sponsor">
-      <option value="Belum">Belum</option>
-      <option value="Sedang dicari">Sedang dicari</option>
-      <option value="Sudah ada">Sudah ada</option>
-    </select>
-  </div>
-  <div class="f">
-    <label for="f-name">Nama Anda</label>
-    <input id="f-name" type="text" autocomplete="name">
-  </div>
-  <div class="f">
-    <label for="f-wa">Nomor WhatsApp Anda</label>
-    <input id="f-wa" type="tel" autocomplete="tel">
-  </div>
-    <button class="btn" id="send" type="button">Kirim lewat WhatsApp</button>
+    <div class="f"><label for="f-event">Nama event</label><input id="f-event" type="text"></div>
+    <div class="f"><label for="f-city">Kota acara</label><input id="f-city" type="text"></div>
+    <div class="f"><label for="f-date">Tanggal acara</label><input id="f-date" type="date"></div>
+    <div class="f"><label for="f-qty">Perkiraan jumlah peserta</label><input id="f-qty" type="number" min="1"></div>
+    <div class="f"><label for="f-sponsor">Sudah ada sponsor?</label>
+      <select id="f-sponsor"><option>Belum</option><option>Sedang dicari</option><option>Sudah ada</option></select></div>
+    <div class="f"><label for="f-name">Nama Anda</label><input id="f-name" type="text"></div>
+    <div class="f"><label for="f-wa">Nomor WhatsApp Anda</label><input id="f-wa" type="tel"></div>
+    <button class="btn btn-o" id="send" type="button">Kirim lewat WhatsApp</button>
     <p class="err" id="err"></p>
   </div>
 </dialog>
 
-<a class="wa" id="waFab" href="#" target="_blank" rel="noopener" aria-label="Hubungi Tangka Studio lewat WhatsApp">
+<a class="wa" id="waFab" href="#" target="_blank" rel="noopener" aria-label="Hubungi lewat WhatsApp">
   <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
   <b>WhatsApp</b>
 </a>
 
 <script>
-/* ganti nomor WA tujuan di sini */
 var WA = '6281276693152';
 
 var dlg = document.getElementById('modal');
@@ -371,86 +346,51 @@ Array.prototype.forEach.call(document.querySelectorAll('[data-open]'), function(
 document.getElementById('xClose').addEventListener('click', function(){ dlg.close(); });
 dlg.addEventListener('click', function(e){ if (e.target === dlg) dlg.close(); });
 
+/* popup muncul sendiri: sekali per sesi, setelah 12 detik ATAU scroll 50% */
+var shown = false;
+function autoPopup(){
+  if (shown || dlg.open) return;
+  try { if (sessionStorage.getItem('tsPopup')) return; } catch(e){}
+  shown = true;
+  try { sessionStorage.setItem('tsPopup','1'); } catch(e){}
+  dlg.showModal();
+}
+setTimeout(autoPopup, 12000);
+window.addEventListener('scroll', function(){
+  var d = document.documentElement;
+  if ((window.scrollY + window.innerHeight) / d.scrollHeight > 0.5) autoPopup();
+}, {passive:true});
+
 var fab = document.getElementById('waFab');
 fab.href = 'https://wa.me/' + WA + '?text=' + encodeURIComponent(
   'Halo Tangka Studio, saya mau tanya soal grafir medal finisher untuk event saya.');
-function toggleFab(){
-  if (window.scrollY > 420) fab.classList.add('on');
-  else fab.classList.remove('on');
-}
-window.addEventListener('scroll', toggleFab, {passive:true});
-toggleFab();
+function tog(){ window.scrollY > 400 ? fab.classList.add('on') : fab.classList.remove('on'); }
+window.addEventListener('scroll', tog, {passive:true}); tog();
 
 document.getElementById('send').addEventListener('click', function(){
   function v(id){ return document.getElementById(id).value.trim(); }
-  var ev = v('f-event'), ct = v('f-city'), dt = v('f-date'), qty = v('f-qty'),
-      sp = v('f-sponsor'), nm = v('f-name'), wa = v('f-wa');
-  var err = document.getElementById('err');
-
-  if(!ev || !ct || !dt || !nm || !wa){
-    err.textContent = 'Nama event, kota, tanggal, nama, dan nomor WhatsApp perlu diisi.';
-    return;
-  }
-  err.textContent = '';
-
-  var msg = 'Halo Tangka Studio, saya mau ajukan grafir medal.\n\n'
-    + 'Event: ' + ev + '\n'
-    + 'Kota: ' + ct + '\n'
-    + 'Tanggal: ' + dt + '\n'
-    + 'Perkiraan peserta: ' + (qty || '-') + '\n'
-    + 'Sponsor: ' + sp + '\n\n'
-    + 'Nama: ' + nm + '\n'
-    + 'WhatsApp: ' + wa;
-
-  window.open('https://wa.me/' + WA + '?text=' + encodeURIComponent(msg), '_blank');
+  var ev=v('f-event'), ct=v('f-city'), dt=v('f-date'), qty=v('f-qty'),
+      sp=v('f-sponsor'), nm=v('f-name'), wa=v('f-wa');
+  var err=document.getElementById('err');
+  if(!ev||!ct||!dt||!nm||!wa){ err.textContent='Nama event, kota, tanggal, nama, dan nomor WhatsApp perlu diisi.'; return; }
+  err.textContent='';
+  window.open('https://wa.me/'+WA+'?text='+encodeURIComponent(
+    'Halo Tangka Studio, saya mau ajukan grafir medal.\n\n'
+    +'Event: '+ev+'\nKota: '+ct+'\nTanggal: '+dt+'\nPerkiraan peserta: '+(qty||'-')
+    +'\nSponsor: '+sp+'\n\nNama: '+nm+'\nWhatsApp: '+wa), '_blank');
 });
 </script>
+
 <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@graph": [
-    {
-      "@type": "ProfessionalService",
-      "@id": "https://vapekanbaru-png.github.io/tangka/#studio",
-      "name": "Tangka Studio",
-      "description": "Jasa grafir nama dan catatan waktu finisher pada medal peserta event lari, dikerjakan di lokasi acara.",
-      "url": "https://vapekanbaru-png.github.io/tangka/",
-      "image": "https://vapekanbaru-png.github.io/tangka/booth.jpg",
-      "telephone": "+6281276693152",
-      "priceRange": "$$",
-      "address": {
-        "@type": "PostalAddress",
-        "addressLocality": "Pekanbaru",
-        "addressRegion": "Riau",
-        "addressCountry": "ID"
-      },
-      "areaServed": { "@type": "Country", "name": "Indonesia" },
-      "sameAs": ["https://www.instagram.com/tangkastudio/"],
-      "makesOffer": {
-        "@type": "Offer",
-        "itemOffered": {
-          "@type": "Service",
-          "name": "Grafir medal finisher di lokasi acara",
-          "serviceType": "Laser engraving"
-        }
-      }
-    },
-    {
-      "@type": "FAQPage",
-      "@id": "https://vapekanbaru-png.github.io/tangka/#faq",
-      "mainEntity": [
-        { "@type": "Question", "name": "Bisa ke kota mana saja?",
-          "acceptedAnswer": { "@type": "Answer", "text": "Seluruh Indonesia. Peralatan kami portabel dan berangkat bersama tim." } },
-        { "@type": "Question", "name": "Siapa yang membayar?",
-          "acceptedAnswer": { "@type": "Answer", "text": "Peserta, sponsor, atau penyelenggara secara borongan. Pada dua model pertama penyelenggara tidak mengeluarkan biaya sama sekali." } },
-        { "@type": "Question", "name": "Apa yang perlu disiapkan penyelenggara?",
-          "acceptedAnswer": { "@type": "Answer", "text": "Satu meja di area finisher, flyer yang masuk racepack, dan izin pemakaian logo acara." } },
-        { "@type": "Question", "name": "Medal jenis apa yang bisa digrafir?",
-          "acceptedAnswer": { "@type": "Answer", "text": "Medal logam seperti zinc alloy, kuningan, dan besi berlapis. Kami tes dulu pada sampel medal sebelum hari acara." } }
-      ]
-    }
-  ]
-}
+{"@context":"https://schema.org","@type":"ProfessionalService",
+"name":"Tangka Studio",
+"description":"Jasa grafir nama dan catatan waktu finisher pada medal peserta event lari, dikerjakan di lokasi acara.",
+"url":"https://vapekanbaru-png.github.io/tangka/",
+"image":"https://vapekanbaru-png.github.io/tangka/booth.jpg",
+"telephone":"+6281276693152",
+"address":{"@type":"PostalAddress","addressLocality":"Pekanbaru","addressRegion":"Riau","addressCountry":"ID"},
+"areaServed":{"@type":"Country","name":"Indonesia"},
+"sameAs":["https://www.instagram.com/tangkastudio/"]}
 </script>
 </body>
 </html>
