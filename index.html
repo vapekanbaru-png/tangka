@@ -64,14 +64,14 @@ a{color:var(--orange)}
 .hd .btn{padding:11px 18px}
 
 /* hero */
-.hero{display:grid;grid-template-columns:1.08fr .92fr;gap:clamp(28px,4vw,56px);
+.hero{display:grid;grid-template-columns:1.3fr .7fr;gap:clamp(28px,4vw,56px);
   align-items:center;padding:clamp(44px,6vw,76px) 0 clamp(36px,5vw,56px)}
 .hero h1{margin-bottom:20px}
 .hero h1 em{font-style:normal;color:var(--orange)}
 .hero .sub{font-size:clamp(17px,1.7vw,19px);max-width:44ch}
 .cta{display:flex;flex-wrap:wrap;gap:11px;margin-top:28px}
 .hero figure{margin:0}
-.hero img{width:100%;aspect-ratio:4/4.4;object-fit:cover;object-position:center 36%}
+.hero figure video{width:100%;aspect-ratio:4/5;max-height:400px;object-fit:cover;background:#111}
 .cap{font-family:var(--serif);font-size:15px;color:#8a8781;margin-top:9px}
 
 /* klaim */
@@ -97,19 +97,20 @@ section{padding:clamp(52px,7vw,88px) 0}
 
 /* bukti */
 .proof{background:var(--wash)}
-.clips{display:grid;grid-template-columns:repeat(2,minmax(0,250px));gap:16px;margin-top:32px}
-.clips video{width:100%;aspect-ratio:9/16;object-fit:cover;background:#111}
+.booth{margin:30px 0 0}
+.booth img{width:100%;max-width:760px;height:clamp(200px,32vw,330px);object-fit:cover;object-position:center 38%}
+.clips{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:32px;max-width:700px}
+.clips video{width:100%;aspect-ratio:9/16;object-fit:cover;background:#111;display:block}
 
 /* faq */
 /* instagram */
-.ig{display:flex;flex-wrap:wrap;align-items:center;gap:18px;margin-top:30px;
-  border:1.5px solid var(--line);padding:24px 26px}
-.ig-i{width:44px;height:44px;flex:none;display:grid;place-items:center;background:var(--orange)}
-.ig-i svg{width:24px;height:24px;fill:#fff}
-.ig-t{flex:1 1 240px}
-.ig-t b{display:block;font-family:var(--serif);font-size:20px;font-weight:600;color:var(--ink)}
-.ig-t span{font-size:15px}
+.iggrid{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-top:26px}
+.iggrid a{display:block;aspect-ratio:1;overflow:hidden;background:var(--wash)}
+.iggrid img{width:100%;height:100%;object-fit:cover}
+.iglink{display:inline-block;margin-top:18px;font-size:15px;font-weight:600;text-decoration:none}
+.iglink:hover{text-decoration:underline}
 #ig-feed:not(:empty){margin-top:26px}
+#ig-feed:not(:empty) ~ .iggrid{display:none}
 
 .faq{margin-top:34px;border-top:1px solid var(--line)}
 .faq details{border-bottom:1px solid var(--line)}
@@ -157,7 +158,7 @@ dialog::backdrop{background:rgba(22,21,19,.6)}
 @media(max-width:860px){
   .hero{grid-template-columns:1fr;padding-top:34px}
   .hero figure{order:-1}
-  .hero img{aspect-ratio:4/3}
+  .hero figure video{aspect-ratio:4/3;max-height:250px}
   .claims,.models{grid-template-columns:1fr}
   .claim{padding:22px 0}
   .claim + .claim{padding-left:0;border-left:0;border-top:1px solid var(--line)}
@@ -166,9 +167,14 @@ dialog::backdrop{background:rgba(22,21,19,.6)}
   .clips{grid-template-columns:1fr 1fr}
 }
 @media(max-width:560px){
-  .clips{grid-template-columns:minmax(0,290px)}
+  .clips{display:flex;overflow-x:auto;gap:10px;padding-bottom:8px;
+    scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch}
+  .clips video{flex:0 0 62%;scroll-snap-align:start}
   .wa b{display:none}
   .wa{padding:15px;border-radius:50%}
+}
+@media(prefers-reduced-motion:reduce){
+  .clips video[autoplay]{animation:none}
 }
 </style>
 </head>
@@ -191,9 +197,9 @@ dialog::backdrop{background:rgba(22,21,19,.6)}
     </div>
   </div>
   <figure>
-    <img src="booth.jpg" width="1600" height="1200"
-         alt="Peserta mengantre di booth grafir Tangka Studio di area finisher">
-    <p class="cap">Booth kami di area finisher, Pekanbaru, Juli 2026.</p>
+    <video src="hero.mp4" poster="hero.jpg" autoplay muted loop playsinline preload="metadata"
+           aria-label="Laser sedang menggrafir medal finisher"></video>
+    <p class="cap">Laser fiber kami sedang menggrafir medal finisher.</p>
   </figure>
 </div>
 
@@ -243,9 +249,16 @@ dialog::backdrop{background:rgba(22,21,19,.6)}
   <div class="wrap">
     <h2>Seperti apa di lapangan</h2>
     <p class="lead">Kami datang dengan mesin, operator, dan sistem antreannya sendiri. Yang kami perlukan dari Anda hanya satu meja di area finisher dan flyer yang masuk racepack.</p>
+    <figure class="booth">
+      <img src="booth.jpg" width="1600" height="1200" loading="lazy"
+           alt="Peserta mengantre di booth grafir Tangka Studio di area finisher">
+      <p class="cap">Antrean di booth kami, Pekanbaru, Juli 2026.</p>
+    </figure>
+
     <div class="clips">
       <video src="clip-engrave.mp4" poster="clip-engrave.jpg" controls playsinline preload="metadata"></video>
-      <video src="clip-proses.mp4" poster="clip-proses.jpg" controls playsinline preload="metadata"></video>
+      <video src="clip-a.mp4" poster="clip-a.jpg" autoplay muted loop playsinline preload="metadata"></video>
+      <video src="clip-b.mp4" poster="clip-b.jpg" autoplay muted loop playsinline preload="metadata"></video>
     </div>
   </div>
 </section>
@@ -258,19 +271,19 @@ dialog::backdrop{background:rgba(22,21,19,.6)}
     <!-- ====== TEMPEL KODE WIDGET IG DI SINI ======
          Daftar gratis di lightwidget.com atau behold.so, hubungkan akun
          @tangkastudio, lalu tempel potongan kodenya di dalam div bawah ini.
-         Kalau dibiarkan kosong, yang tampil hanya kartu tautan di bawahnya. -->
+         Begitu terisi, grid contoh di bawahnya hilang otomatis. -->
     <div id="ig-feed"></div>
 
-    <div class="ig">
-      <span class="ig-i" aria-hidden="true">
-        <svg viewBox="0 0 24 24"><path d="M12 2.16c3.2 0 3.58.01 4.85.07 1.17.05 1.8.25 2.23.41.56.22.96.48 1.38.9.42.42.68.82.9 1.38.16.42.36 1.06.41 2.23.06 1.27.07 1.65.07 4.85s-.01 3.58-.07 4.85c-.05 1.17-.25 1.8-.41 2.23-.22.56-.48.96-.9 1.38-.42.42-.82.68-1.38.9-.42.16-1.06.36-2.23.41-1.27.06-1.65.07-4.85.07s-3.58-.01-4.85-.07c-1.17-.05-1.8-.25-2.23-.41-.56-.22-.96-.48-1.38-.9-.42-.42-.68-.82-.9-1.38-.16-.42-.36-1.06-.41-2.23C2.17 15.58 2.16 15.2 2.16 12s.01-3.58.07-4.85c.05-1.17.25-1.8.41-2.23.22-.56.48-.96.9-1.38.42-.42.82-.68 1.38-.9.42-.16 1.06-.36 2.23-.41C8.42 2.17 8.8 2.16 12 2.16M12 0C8.74 0 8.33.01 7.05.07 5.78.13 4.9.33 4.14.63c-.79.3-1.46.72-2.12 1.39C1.35 2.68.93 3.35.63 4.14.33 4.9.13 5.78.07 7.05.01 8.33 0 8.74 0 12s.01 3.67.07 4.95c.06 1.27.26 2.15.56 2.91.3.79.72 1.46 1.39 2.12.66.67 1.33 1.09 2.12 1.39.76.3 1.64.5 2.91.56C8.33 23.99 8.74 24 12 24s3.67-.01 4.95-.07c1.27-.06 2.15-.26 2.91-.56.79-.3 1.46-.72 2.12-1.39.67-.66 1.09-1.33 1.39-2.12.3-.76.5-1.64.56-2.91.06-1.28.07-1.69.07-4.95s-.01-3.67-.07-4.95c-.06-1.27-.26-2.15-.56-2.91-.3-.79-.72-1.46-1.39-2.12C21.32 1.35 20.65.93 19.86.63c-.76-.3-1.64-.5-2.91-.56C15.67.01 15.26 0 12 0zm0 5.84a6.16 6.16 0 100 12.32A6.16 6.16 0 0012 5.84zm0 10.16a4 4 0 110-8 4 4 0 010 8zm7.85-10.4a1.44 1.44 0 11-2.88 0 1.44 1.44 0 012.88 0z"/></svg>
-      </span>
-      <span class="ig-t">
-        <b>@tangkastudio</b>
-        <span>Hasil grafir terbaru, diperbarui rutin.</span>
-      </span>
-      <a class="btn btn-o" href="https://www.instagram.com/tangkastudio/" target="_blank" rel="noopener">Buka Instagram</a>
+    <div class="iggrid">
+      <a href="https://www.instagram.com/tangkastudio/" target="_blank" rel="noopener">
+        <img src="booth.jpg" alt="Booth grafir di area finisher" loading="lazy"></a>
+      <a href="https://www.instagram.com/tangkastudio/" target="_blank" rel="noopener">
+        <img src="clip-proses.jpg" alt="Medal di meja kerja mesin grafir" loading="lazy"></a>
+      <a href="https://www.instagram.com/tangkastudio/" target="_blank" rel="noopener">
+        <img src="clip-a.jpg" alt="Laser sedang menggrafir medal" loading="lazy"></a>
     </div>
+
+    <a class="iglink" href="https://www.instagram.com/tangkastudio/" target="_blank" rel="noopener">Lihat semua di @tangkastudio &rarr;</a>
   </div>
 </section>
 
@@ -346,20 +359,8 @@ Array.prototype.forEach.call(document.querySelectorAll('[data-open]'), function(
 document.getElementById('xClose').addEventListener('click', function(){ dlg.close(); });
 dlg.addEventListener('click', function(e){ if (e.target === dlg) dlg.close(); });
 
-/* popup muncul sendiri: sekali per sesi, setelah 12 detik ATAU scroll 50% */
-var shown = false;
-function autoPopup(){
-  if (shown || dlg.open) return;
-  try { if (sessionStorage.getItem('tsPopup')) return; } catch(e){}
-  shown = true;
-  try { sessionStorage.setItem('tsPopup','1'); } catch(e){}
-  dlg.showModal();
-}
-setTimeout(autoPopup, 12000);
-window.addEventListener('scroll', function(){
-  var d = document.documentElement;
-  if ((window.scrollY + window.innerHeight) / d.scrollHeight > 0.5) autoPopup();
-}, {passive:true});
+/* popup muncul begitu halaman dibuka, ditutup manual oleh pengunjung */
+setTimeout(function(){ if (!dlg.open) dlg.showModal(); }, 600);
 
 var fab = document.getElementById('waFab');
 fab.href = 'https://wa.me/' + WA + '?text=' + encodeURIComponent(
