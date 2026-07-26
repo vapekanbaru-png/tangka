@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://vapekanbaru-png.github.io/tangka/sitemap.xml
